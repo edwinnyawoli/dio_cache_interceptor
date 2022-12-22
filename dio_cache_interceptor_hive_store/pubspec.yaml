@@ -2,12 +2,17 @@ name: dio_cache_interceptor_hive_store
 description: A DB cache store implementation with Hive for dio_cache_interceptor package.
 homepage: https://github.com/llfbandit/dio_cache_interceptor/tree/master/dio_cache_interceptor_hive_store
 version: 3.2.0
+publish_to: none
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  dio_cache_interceptor: ^3.3.0
+  dio_cache_interceptor:
+    git:
+      url: https://github.com/edwinnyawoli/dio_cache_interceptor
+      ref: patch_utf_16
+      path: dio_cache_interceptor
 
   # https://pub.dev/packages/hive
   hive: ^2.0.5

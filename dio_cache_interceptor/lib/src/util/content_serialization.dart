@@ -23,7 +23,7 @@ dynamic deserializeContent(ResponseType type, List<int>? content) {
     case ResponseType.plain:
       return (content != null) ? utf8.decode(content) : null;
     case ResponseType.json:
-      return (content != null) ? jsonDecode(utf8.decode(content)) : null;
+      return (content != null) ? jsonDecode(utf8.decode(content, allowMalformed: true)) : null;
     default:
       throw UnsupportedError('Response type not supported : $type.');
   }
